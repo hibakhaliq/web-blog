@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation'; 
 import { blogs } from '@/app/data/blogs';
 import CommentSection from "@/app/components/CommentSection";
+import Image from 'next/image';
 
 const BlogDetailPage = () => {
   const { id } = useParams(); 
@@ -28,10 +29,12 @@ const BlogDetailPage = () => {
         <h1 className="text-3xl font-semibold text-emerald-800 text-center mb-4">{blog.title}</h1>
 
     
-        <img
+        <Image
           src={blog.imageUrl}
           alt={blog.title}
-          className="w-90 h-80 object-cover rounded-lg mx-auto mb-4"
+          width={500}
+          height={600}
+          className="object-cover rounded-lg mx-auto mb-4"
         />
         
        
